@@ -107,7 +107,6 @@ export async function getServerSideProps(context) {
     const fake = await fetch(`http://localhost:3000/api/fakeNews?link=${url}`);
     const fakeNews = await fake.json();
     const text = await fakeNews.choices[0].text;
-    console.log(text);
     return {
       props: {
         slug,
