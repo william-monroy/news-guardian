@@ -26,7 +26,7 @@ export default function NavBar() {
   };
 
   return (
-    <Navbar isBordered variant="sticky">
+    <Navbar>
       <Navbar.Brand
         css={{
           "@xs": {
