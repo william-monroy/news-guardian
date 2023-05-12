@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/QuizStart.module.css";
 import { Button, Card, Spacer, Text } from "@nextui-org/react";
+import { useRouter } from "next/router";
 
 const QuizStart = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    localStorage.setItem("score", 0);
+  }, []);
+
   return (
     <div className={styles.QuizStart}>
       <Card css={{ p: "1em" }}>
@@ -106,7 +113,12 @@ const QuizStart = () => {
         </Text>
         
         <Spacer y={1.5} />
-        <Button auto onClick={() => router.push("/quiz/1")}>
+        <Button
+          auto
+          onClick={() => {
+            router.push("/quiz/1");
+          }}
+        >
           Inicio
         </Button>
       </Card>

@@ -46,7 +46,7 @@ export default function NavBar() {
           },
         }}
       >
-        {!currentUser && (
+        {/* {!currentUser && (
           <React.Fragment>
             <Navbar.Link color="inherit" href="/login">
               Login
@@ -55,7 +55,7 @@ export default function NavBar() {
               Sign Up
             </Button>
           </React.Fragment>
-        )}
+        )} */}
 
         {currentUser && (
           <Dropdown placement="bottom-right">
