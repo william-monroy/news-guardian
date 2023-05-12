@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "../../styles/QuizQuestion.module.css";
-import { Button, Loading, Row, Text } from "@nextui-org/react";
+import { Button, Loading, Row, Spacer, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 const QuizQuestion = ({ slug, text, real }) => {
@@ -19,21 +19,29 @@ const QuizQuestion = ({ slug, text, real }) => {
 
   return (
     <div className={styles.QuizQuestion}>
-      <Text h4>Question {slug}</Text>
+      <Text
+        h3
+        weight="bold"
+        css={{
+          textGradient: "45deg, $yellow600 -20%, $red600 100%",
+        }}
+      >
+        Question {slug}
+      </Text>
       {isLoading ? (
         <Loading type="points" />
       ) : (
         <>
           <Text>{text}</Text>
-          <Text>REAL: {real}</Text>
-          <Row>
+          <Spacer y={1} />
+          <Row justify="space-around" wrap="wrap">
             <Button
               color={"success"}
               onClick={() => {
                 const score = window.localStorage.getItem("score");
                 window.localStorage.setItem(
                   "score",
-                  real === 1 ? parseInt(score) + 10 : parseInt(score) - 5
+                  real === 1 ? parseInt(score) + 10 : parseInt(score) - 0
                 );
                 setIsLoading(true);
                 handleSimulateFetch();
@@ -43,16 +51,18 @@ const QuizQuestion = ({ slug, text, real }) => {
                   router.push(`/result`);
                 }
               }}
+              css={{ margin: "1em" }}
             >
               Verdadero
             </Button>
             <Button
+              css={{ margin: "1em" }}
               color={"error"}
               onClick={() => {
                 const score = window.localStorage.getItem("score");
                 window.localStorage.setItem(
                   "score",
-                  real === 1 ? parseInt(score) + -5 : parseInt(score) + 10
+                  real === 1 ? parseInt(score) + 0 : parseInt(score) + 10
                 );
                 setIsLoading(true);
                 handleSimulateFetch();

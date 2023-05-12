@@ -9,10 +9,16 @@ import {
 } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { useTheme as useNextTheme } from "next-themes";
+import { Switch, useTheme } from "@nextui-org/react";
+import { SunIcon } from "./icons/SunIcon";
+import { MoonIcon } from "./icons/MoonIcon";
 
 export default function NavBar() {
   const { user, logout } = useUser();
   const [currentUser, setCurrentUser] = useState(null);
+  const { setTheme } = useNextTheme();
+  const { isDark, type } = useTheme();
 
   useEffect(() => {
     setCurrentUser(user);
@@ -46,6 +52,13 @@ export default function NavBar() {
           },
         }}
       >
+        <Switch
+          checked={isDark}
+          onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+          size="xl"
+          iconOn={<SunIcon filled />}
+          iconOff={<MoonIcon filled />}
+        />
         {/* {!currentUser && (
           <React.Fragment>
             <Navbar.Link color="inherit" href="/login">

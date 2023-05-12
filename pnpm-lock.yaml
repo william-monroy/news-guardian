@@ -8,6 +8,7 @@ specifiers:
   js-cookie: ^2.2.1
   newsapi: ^2.4.1
   next: '12'
+  next-themes: ^0.2.1
   openai: ^3.2.1
   react: ^17.0.2
   react-confetti: ^6.1.0
@@ -25,6 +26,7 @@ dependencies:
   js-cookie: 2.2.1
   newsapi: 2.4.1
   next: 12.3.4_sfoxds7t5ydpegc3knd667wn6m
+  next-themes: 0.2.1_dwjfwrt6uv2f53xn6wotzcxyoa
   openai: 3.2.1
   react: 17.0.2
   react-confetti: 6.1.0_react@17.0.2
@@ -2544,6 +2546,18 @@ packages:
       node-fetch: 2.6.11
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /next-themes/0.2.1_dwjfwrt6uv2f53xn6wotzcxyoa:
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 12.3.4_sfoxds7t5ydpegc3knd667wn6m
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /next/12.3.4_sfoxds7t5ydpegc3knd667wn6m:
