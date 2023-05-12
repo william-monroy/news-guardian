@@ -63,6 +63,7 @@ export default function Home() {
               h1
               css={{
                 textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                textAlign: "center",
               }}
             >
               Can you detect AI from reality?
