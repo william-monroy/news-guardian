@@ -4,10 +4,12 @@ import Confetti from "react-confetti";
 import styles from "../styles/Result.module.css";
 import { Button, Text } from "@nextui-org/react";
 import { BsFillTrophyFill } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const Result = () => {
   const [result, setResult] = useState(0);
   const { width, height } = useWindowSize();
+  const router = useRouter();
 
   useEffect(() => {
     const result = localStorage.getItem("score");

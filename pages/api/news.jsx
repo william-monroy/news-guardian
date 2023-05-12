@@ -6,6 +6,7 @@ export default function handler(req, res) {
     try{
         newsapi.v2.everything({
             q: 'amlo | Andrés Manuel López Obrador',
+            language: 'es',
         }).then(response => {
             res.status(200).json(response)
         });

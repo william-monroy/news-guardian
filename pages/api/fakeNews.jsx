@@ -7,14 +7,14 @@ const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
 
-    const query = "with the following article: " + req.query.link + " . Write me an article that disproves the article above."
+    const query = "given this article: " + req.query.link + " . write a brief description in spanish of an article disproving the previous article."
 
     try{
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt:  query,
         temperature: 0.7,
-        max_tokens: 300,
+        max_tokens: 200,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
